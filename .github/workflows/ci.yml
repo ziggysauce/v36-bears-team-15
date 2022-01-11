@@ -1,6 +1,14 @@
-name: ci
-on: [pull_request]
+name: Client CI
+# on events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
+# jobs
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,13 +22,13 @@ jobs:
           node-version: 14.x
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn --cwd ./client install
 
       - name: Linting
-        run: yarn lint
+        run: yarn --cwd ./client lint
 
       - name: Test
-        run: yarn test
+        run: yarn --cwd ./client test
 
       - name: Build
-        run: yarn build
+        run: yarn --cwd ./client build

@@ -1,6 +1,6 @@
 # Peak Productivity
 
-Boilerplate TypeScript, React, NextJS and Styled Components.
+Boilerplate TypeScript, React, N
 
 ## Getting Started
 

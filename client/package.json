@@ -10,6 +10,8 @@
     "format": "prettier --write .",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
+    "update:snapshot": "jest --updateSnapshot",
+    "prepare": "cd .. && husky install client/.husky",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"

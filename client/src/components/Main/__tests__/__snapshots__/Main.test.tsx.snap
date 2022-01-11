@@ -47,5 +47,12 @@ exports[`<Main /> should render H1 correctly 1`] = `
   >
     TypeScript, ReactJS, NextJS & Styled Components
   </h2>
+  <main
+    class=""
+  >
+    <h1>
+      Header
+    </h1>
+  </main>
 </main>
 `;

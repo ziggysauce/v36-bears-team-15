@@ -1,15 +1,14 @@
 import * as S from './styles';
-import Header from '../Header';
+import Footer from '../Footer';
 
 const Main = ({
   title = 'Next.js Boilerplate',
   description = 'TypeScript, ReactJS, NextJS & Styled Components',
 }) => (
   <S.Wrapper>
-    <Header />
     <S.Title>{title}</S.Title>
     <S.Description>{description}</S.Description>
-    <Header />
+    <Footer />
   </S.Wrapper>
 );
 

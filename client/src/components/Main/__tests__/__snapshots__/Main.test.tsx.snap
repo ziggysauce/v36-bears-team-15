@@ -37,6 +37,13 @@ exports[`<Main /> should render H1 correctly 1`] = `
 <main
   class="c0"
 >
+  <main
+    class=""
+  >
+    <h1>
+      Header
+    </h1>
+  </main>
   <h1
     class="c1"
   >

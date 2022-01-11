@@ -6,6 +6,7 @@ const Main = ({
   description = 'TypeScript, ReactJS, NextJS & Styled Components',
 }) => (
   <S.Wrapper>
+    <Header />
     <S.Title>{title}</S.Title>
     <S.Description>{description}</S.Description>
     <Header />

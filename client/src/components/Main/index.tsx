@@ -1,5 +1,5 @@
 import * as S from './styles';
-import Header from '../header/index';
+import Header from '../Header';
 
 const Main = ({
   title = 'Next.js Boilerplate',

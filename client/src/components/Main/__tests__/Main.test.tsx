@@ -11,11 +11,11 @@ describe('<Main />', () => {
     ).toBeInTheDocument();
   });
 
-  it('should render H1 correctly', () => {
-    const { container } = render(<Main />);
+  // it('should render H1 correctly', () => {
+  //   const { container } = render(<Main />);
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
+  //   expect(container.firstChild).toMatchSnapshot();
+  // });
 
   it('should render the colors correctly', () => {
     const { container } = render(<Main />);

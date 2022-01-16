@@ -141,11 +141,7 @@ const opacity = {
 };
 
 const gradients = {
-  sandToBlurple: 'linear-gradient(90deg, #fccb90, #d57eeb)',
   tealToBrightPurple: 'linear-gradient(90deg, #2e9fcc, #ce69e8)',
-  sandToBrightPurpleToBlurple:
-    'linear-gradient(125.5deg, #fccb90 -26%, #d57eeb 60.6%, #7e89eb)',
-  aquaToAqua: 'linear-gradient(90deg, #6EEFF1, #6EEFF1);',
   tealToPurple: 'linear-gradient(90deg, #2e9fcc, #ce69e8);',
 };
 

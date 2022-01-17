@@ -7,7 +7,7 @@ describe('<MoodLogger />', () => {
     render(<MoodLogger />);
 
     expect(
-      screen.getByRole('heading', { name: /Mood Logger/i }),
+      screen.getByRole('heading', { name: /how are you feeling/i }),
     ).toBeInTheDocument();
   });
 });

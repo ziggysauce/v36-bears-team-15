@@ -7,6 +7,9 @@ export default function Pomodoro() {
   const [count, setCount] = useState(0);
   const [toStartTime, setToStartTime] = useState(30);
   const [startTime, setStartTime] = useState(30);
+  const [mode, setMode] = useState('Work');
+
+  console.log(mode);
 
   const startHandler = () => {
     if (timerIdRef.current) {
@@ -58,37 +61,57 @@ export default function Pomodoro() {
 
   return (
     <div>
-      <div>wefwefwefwef</div>
-      <div>Timer: {startTime - count}s</div>
-      <div>Current Time: {currentTime(startTime - count)}</div>
-      <div>Start Time: {startTime}</div>
-      <div>Percentage: {((startTime - count) * 100) / startTime}</div>
-      <div>
-        <button onClick={startHandler}>Start</button>
-        <button onClick={stopHandler}>Stop</button>
-        <button onClick={resetHandler}>Reset</button>
-        <input onChange={handleChange}></input>
-        <button onClick={() => setStartTime(toStartTime)}>
-          Set Start Time
-        </button>
-        <Container>
-          <CircularProgressBar
-            strokeWidth={10}
-            squareSize={200}
-            percentage={100 - percentage}
-            time={currentTime(startTime - count)}
-          />
-          <input
-            id="progressInput"
-            type="range"
-            min="0"
-            max="100"
-            step="1"
-            value={percentage}
-            onChange={handleChangeEvent}
-          />
-        </Container>
-      </div>
+      <Background>
+        <div>Timer: {startTime - count}s</div>
+        <div>Current Time: {currentTime(startTime - count)}</div>
+        <div>Start Time: {startTime}</div>
+        <div>Percentage: {((startTime - count) * 100) / startTime}</div>
+        <div>
+          <button onClick={startHandler}>Start</button>
+          <button onClick={stopHandler}>Stop</button>
+          <button onClick={resetHandler}>Reset</button>
+          <input onChange={handleChange}></input>
+          <button onClick={() => setStartTime(toStartTime)}>
+            Set Start Time
+          </button>
+          <Container>
+            <ButtonContainer>
+              <Button onClick={() => setMode('Work')} mode={mode} title="Work">
+                Work
+              </Button>
+              <Button
+                onClick={() => setMode('Short Break')}
+                mode={mode}
+                title="Short Break"
+              >
+                Short Break
+              </Button>
+              <Button
+                onClick={() => setMode('Long Break')}
+                mode={mode}
+                title="Long Break"
+              >
+                Long Break
+              </Button>
+            </ButtonContainer>
+            <CircularProgressBar
+              strokeWidth={10}
+              squareSize={200}
+              percentage={100 - percentage}
+              time={currentTime(startTime - count)}
+            />
+            <input
+              id="progressInput"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value={percentage}
+              onChange={handleChangeEvent}
+            />
+          </Container>
+        </div>
+      </Background>
     </div>
   );
 }
@@ -98,4 +121,39 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #e2c5c5;
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  padding-top: 100px;
+`;
+
+const Background = styled.div`
+  background-color: #ffffff;
+`;
+
+const Button = styled.div`
+  width: 90px;
+  height: 30px;
+
+  color: #ffffff;
+  padding: auto;
+  font-size: 12px;
+  padding-left: 20px;
+  padding-top: 7px;
+  cursor: pointer;
+
+  background-color: ${(props) =>
+    props.mode === props.title ? `${'#8b3a3a'}` : `${'#b88d8d'}`};
+`;
+
+const ButtonContainer = styled.div`
+  width: 400px;
+  height: 70px;
+  display: flex;
+  padding: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
 `;

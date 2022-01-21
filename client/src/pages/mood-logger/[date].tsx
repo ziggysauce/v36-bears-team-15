@@ -3,7 +3,7 @@ import MoodLogger from 'components/MoodLogger';
 
 const HistoricMood = () => {
   const router = useRouter();
-  const { date } = router.query; // TODO: Validate that the route is a valid date
+  const { date } = router.query;
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
   const validDate = !!date?.match(dateRegex);
 

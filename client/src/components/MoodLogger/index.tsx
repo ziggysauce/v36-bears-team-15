@@ -12,7 +12,8 @@ const formatDate = (date) =>
  * [x] If first entry of the day show "How are you feeling today?"
  * [x] Otherwise show entry submissions and if adding, show "How are you feeling at the moment?"
  * [x] Show previous days
- * [ ] Navigate to previous days' logs
+ * [x] Navigate to previous days' logs
+ * [ ] Build a UI to select a historic date to view
  */
 const MoodLogger = ({ historicDate, historicData }) => {
   // State management
@@ -39,6 +40,7 @@ const MoodLogger = ({ historicDate, historicData }) => {
   const onAddEntry = (mood) => {
     addEntry([...entries, { mood, timestamp: new Date() }]);
     addEntryToggle(false);
+    // TODO: Setup a request to update the database
   };
 
   if ((addingEntry || entries.length === 0) && !historicDate) {

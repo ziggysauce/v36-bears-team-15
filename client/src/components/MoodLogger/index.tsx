@@ -47,12 +47,14 @@ const MoodLogger = ({ historicDate, historicData }) => {
         <S.h1>Hello, how are you feeling {headerPrompt}?</S.h1>
         <S.MoodContainer>
           {moodOptions.map((mood) => (
-            <div key={mood} onClick={() => onAddEntry(mood.value)}>
+            <div key={mood.value} onClick={() => onAddEntry(mood.value)}>
               <MoodCard mood={mood} />
             </div>
           ))}
         </S.MoodContainer>
-        <S.Button onClick={() => addEntryToggle(false)}>Cancel</S.Button>
+        {entries.length !== 0 && (
+          <S.Button onClick={() => addEntryToggle(false)}>Cancel</S.Button>
+        )}
       </S.Wrapper>
     );
   } else {

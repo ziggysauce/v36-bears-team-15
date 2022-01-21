@@ -4,7 +4,9 @@ const formatTime = (timestamp) =>
   timestamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
 const getMoodDisplay = (moodOptions, mood) => {
-  const { display } = moodOptions.find((o) => o.value === mood);
+  const { display } = moodOptions.find(
+    (o) => o.value.toLowerCase() === mood.toLowerCase(),
+  );
   return display;
 };
 

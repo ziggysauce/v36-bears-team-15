@@ -51,7 +51,7 @@ export const EntryCard = styled.div`
   align-items: center;
 
   > span {
-    padding: 0 6px 0 3px;
+    padding: 0 9px 0 3px;
   }
 `;
 

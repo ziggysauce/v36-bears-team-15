@@ -3,7 +3,9 @@ import MoodLogger from 'components/MoodLogger';
 
 const HistoricMood = () => {
   const router = useRouter();
-  const { date } = router.query;
+  const { date } = router.query; // TODO: Validate that the route is a valid date
+  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  const validDate = !!date?.match(dateRegex);
 
   /**
    * TODO:
@@ -17,7 +19,11 @@ const HistoricMood = () => {
     { mood: 'Happy', timestamp: new Date(now.setHours(now.getHours() + 6)) },
   ];
 
-  return <MoodLogger historicDate={date} historicData={dummyData} />;
+  return validDate ? (
+    <MoodLogger historicDate={date} historicData={dummyData} />
+  ) : (
+    <div>Sorry, this page does not exist.</div> // TODO: This should just instead point to a "not found" page
+  );
 };
 
 export default HistoricMood;

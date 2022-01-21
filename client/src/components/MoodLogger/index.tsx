@@ -26,7 +26,14 @@ const MoodLogger = ({ historicDate, historicData }) => {
 
   // Renders
   const headerPrompt = entries.length ? 'at the moment' : 'today';
-  const moodOptions = ['Upset', 'Sad', 'Meh', 'Content', 'Happy', 'Wonderful'];
+  const moodOptions = [
+    { display: '😡', value: 'upset' },
+    { display: '🙁', value: 'sad' },
+    { display: '😐', value: 'meh' },
+    { display: '🙂', value: 'content' },
+    { display: '😊', value: 'happy' },
+    { display: '😁', value: 'wonderful' },
+  ];
 
   // Event handlers
   const onAddEntry = (mood) => {
@@ -37,14 +44,15 @@ const MoodLogger = ({ historicDate, historicData }) => {
   if ((addingEntry || entries.length === 0) && !historicDate) {
     return (
       <S.Wrapper>
-        <h2>Hello, how are you feeling {headerPrompt}?</h2>
+        <S.h1>Hello, how are you feeling {headerPrompt}?</S.h1>
         <S.MoodContainer>
           {moodOptions.map((mood) => (
-            <div key={mood} onClick={() => onAddEntry(mood)}>
+            <div key={mood} onClick={() => onAddEntry(mood.value)}>
               <MoodCard mood={mood} />
             </div>
           ))}
         </S.MoodContainer>
+        <S.Button onClick={() => addEntryToggle(false)}>Cancel</S.Button>
       </S.Wrapper>
     );
   } else {
@@ -67,7 +75,11 @@ const MoodLogger = ({ historicDate, historicData }) => {
         )}
         <S.EntryContainer>
           {entries.map((entry, idx) => (
-            <EntryCard key={`${idx}-${entry.mood}`} entry={entry} />
+            <EntryCard
+              key={`${idx}-${entry.mood}`}
+              entry={entry}
+              moodOptions={moodOptions}
+            />
           ))}
         </S.EntryContainer>
       </S.Wrapper>

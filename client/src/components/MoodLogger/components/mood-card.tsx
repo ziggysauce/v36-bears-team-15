@@ -1,5 +1,9 @@
 import * as S from '../styles';
 
-const MoodCard = ({ mood }) => <S.MoodCard>{mood}</S.MoodCard>;
+const MoodCard = ({ mood }) => (
+  <S.MoodCard>
+    <S.MoodContent>{mood.display}</S.MoodContent>
+  </S.MoodCard>
+);
 
 export default MoodCard;

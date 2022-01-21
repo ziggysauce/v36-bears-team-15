@@ -3,9 +3,15 @@ import * as S from '../styles';
 const formatTime = (timestamp) =>
   timestamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-const EntryCard = ({ entry: { mood, timestamp } }) => (
+const getMoodDisplay = (moodOptions, mood) => {
+  const { display } = moodOptions.find((o) => o.value === mood);
+  return display;
+};
+
+const EntryCard = ({ entry: { mood, timestamp }, moodOptions }) => (
   <S.EntryCard>
-    You felt {mood} at {formatTime(timestamp)}
+    You felt <span>&nbsp;{getMoodDisplay(moodOptions, mood)}</span> at{' '}
+    {formatTime(timestamp)}
   </S.EntryCard>
 );
 

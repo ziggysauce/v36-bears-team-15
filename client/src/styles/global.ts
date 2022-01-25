@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
-import { bp, breakpoints } from 'styles/breakpoint';
-import theme, { rhythm } from 'styles/theme';
+import { bp, breakpoints } from './breakpoint';
+import theme, { rhythm } from './theme';
 
 const GlobalStyles = createGlobalStyle`
 /* stylelint-disable no-duplicate-selectors */

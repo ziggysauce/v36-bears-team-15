@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CircularProgressBar from './CircularProgressBar';
 export default function Pomodoro() {
   const [percentage, setPercentage] = useState(14);
-  const timerIdRef = useRef(0);
+  const timerIdRef = useRef(null);
   const [count, setCount] = useState(0);
   const [toStartTime, setToStartTime] = useState(30);
   const [startTime, setStartTime] = useState(30);
@@ -11,6 +11,7 @@ export default function Pomodoro() {
 
   console.log(mode);
 
+  // Start the timer
   const startHandler = () => {
     if (timerIdRef.current) {
       return;
@@ -18,14 +19,19 @@ export default function Pomodoro() {
     timerIdRef.current = setInterval(() => setCount((c) => c + 1), 1000);
   };
 
+  // Stop timer when it reaches 0
+
   if (startTime - count <= 0) {
     clearInterval(timerIdRef.current);
   }
 
+  // Stop timer when the stop button is clicked
   const stopHandler = () => {
     clearInterval(timerIdRef.current);
     timerIdRef.current = 0;
   };
+
+  // Reset the timer
 
   const handleChange = (e) => {
     setToStartTime(e.target.value);
@@ -34,16 +40,19 @@ export default function Pomodoro() {
     return () => clearInterval(timerIdRef.current);
   }, []);
 
+  // Function to reset the timer
   const resetHandler = () => {
     clearInterval(timerIdRef.current);
     timerIdRef.current = 0;
     setCount(0);
   };
 
+  // Function to attach 0 in front of numbers less than 10
   function padStartWith0(number, length) {
     return number.toString().padStart(length, '0');
   }
 
+  // Function to convert seconds to minutes and seconds
   const currentTime = (timer) => {
     const min = Math.floor(timer / 60);
     const sec = Math.floor(timer % 60);

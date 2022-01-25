@@ -19,6 +19,10 @@ const navigation = [
     label: 'Mood Logger',
     href: '/mood-logger',
   },
+  {
+    label: 'Pomodoro Timer',
+    href: '/pomodoro-timer',
+  },
 ];
 
 const Main = ({

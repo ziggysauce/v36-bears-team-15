@@ -2,11 +2,16 @@
 import Main from 'components/Main';
 import supabase from '../lib/supabase';
 
-export default function Home({ users }) {
+export default function Home({ users, error }) {
+  if (!error)
+    console.log(
+      "Supabase is connected, here's the first user: ",
+      users[0].name,
+    );
+  else console.log(error.message);
   return (
     <>
       <Main />
-      <p>{JSON.stringify(users)}</p>
     </>
   );
 }

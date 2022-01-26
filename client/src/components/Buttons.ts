@@ -4,9 +4,12 @@ import {
   convertRhythmToRems,
   getBorderRadiusFromKey,
   getColorFromKey,
-} from 'styles/base';
-import { buildResponsiveRules, ResponsiveRuleValue } from 'styles/breakpoint';
-import { Alphas, BorderRadius, Colors } from 'styles/theme';
+} from '../styles/base';
+import {
+  buildResponsiveRules,
+  ResponsiveRuleValue,
+} from '../styles/breakpoint';
+import { Alphas, BorderRadius, Colors } from '../styles/theme';
 
 type ButtonProps = {
   boxShadow?: [Colors, Alphas];

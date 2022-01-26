@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { baseStyles } from 'styles/base';
-import { bp, breakpoints } from 'styles/breakpoint';
+import { baseStyles } from '../styles/base';
+import { bp, breakpoints } from '../styles/breakpoint';
 
 export const Container = styled.div`
   ${baseStyles}

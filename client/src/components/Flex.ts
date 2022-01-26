@@ -1,6 +1,9 @@
 import styled from 'styled-components';
-import { BaseProps, baseStyles } from 'styles/base';
-import { buildResponsiveRules, ResponsiveRuleValue } from 'styles/breakpoint';
+import { BaseProps, baseStyles } from '../styles/base';
+import {
+  buildResponsiveRules,
+  ResponsiveRuleValue,
+} from '../styles/breakpoint';
 
 type JustifyValues =
   | 'center'

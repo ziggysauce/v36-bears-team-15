@@ -1,6 +1,9 @@
 import styled from 'styled-components';
-import { baseStyles, convertRhythmToRems } from 'styles/base';
-import { buildResponsiveRules, ResponsiveRuleValue } from 'styles/breakpoint';
+import { baseStyles, convertRhythmToRems } from '../styles/base';
+import {
+  buildResponsiveRules,
+  ResponsiveRuleValue,
+} from '../styles/breakpoint';
 
 type Props = {
   size: ResponsiveRuleValue<number>;

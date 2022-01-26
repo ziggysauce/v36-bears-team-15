@@ -1,12 +1,12 @@
 // adapted from: https://github.com/azz/styled-css-grid
 import styled, { css } from 'styled-components';
-import { BaseProps, baseStyles, convertRhythmToRems } from 'styles/base';
+import { BaseProps, baseStyles, convertRhythmToRems } from '../styles/base';
 import {
   buildResponsiveRules,
   ResponsiveRuleMap,
   ResponsiveRuleValue,
-} from 'styles/breakpoint';
-import { toRems } from 'styles/theme';
+} from '../styles/breakpoint';
+import { toRems } from '../styles/theme';
 
 type JustifyAlignContentValues =
   | 'start'

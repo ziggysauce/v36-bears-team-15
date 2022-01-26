@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components';
-import { BaseProps, convertPixelsToRems, getColorFromKey } from 'styles/base';
+import {
+  BaseProps,
+  convertPixelsToRems,
+  getColorFromKey,
+} from '../styles/base';
 import {
   bp,
   breakpoints,
   buildResponsiveRules,
   ResponsiveRuleValue,
-} from 'styles/breakpoint';
-import { Colors, Fonts, Gradients } from 'styles/theme';
+} from '../styles/breakpoint';
+import { Colors, Fonts, Gradients } from '../styles/theme';
 
 type WeightValues =
   | '100'

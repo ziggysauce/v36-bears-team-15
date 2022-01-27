@@ -1,16 +1,28 @@
 import styled from 'styled-components';
+import {
+  buildResponsiveRules,
+  ResponsiveRuleValue,
+} from '../../styles/breakpoint';
+import { BaseProps, baseStyles, getColorFromKey } from '../../styles/base';
 
-export const NavLink = styled.a`
-  font-size: 2rem;
-  font-weight: 400;
-  color: #ff0057;
+import { Colors } from '../../styles/theme';
+
+export type LinkProps = BaseProps & {
+  $color?: ResponsiveRuleValue<Colors>;
+};
+
+export const NavLink = styled.a<LinkProps>`
+  ${baseStyles}
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 500;
   text-decoration: none;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
   align-items: start;
+  padding: 0.5rem;
+  ${({ $color = 'gray' }) =>
+    $color && buildResponsiveRules<Colors>('color', $color, getColorFromKey)}
 
   :hover {
-    text-decoration: underline;
+    color: ${({ theme }) => theme.color.primary};
   }
 `;

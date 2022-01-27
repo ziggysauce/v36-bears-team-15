@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
+import { render } from '../../lib/test-utils';
 
 import Sidebar from '.';
 
 describe('<Sidebar />', () => {
-  it('should render the heading', () => {
+  it('should be truthy', () => {
     const { baseElement } = render(<Sidebar />);
 
     expect(baseElement).toBeTruthy();

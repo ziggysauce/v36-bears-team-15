@@ -169,7 +169,7 @@ export const Headline2 = styled(Text).attrs((props) => ({
   size: [32, { sm: 40, lg: 48 }],
   weight: '900',
   lineHeight: [1.25, { sm: 1.4, lg: 1.17 }],
-  $color: 'lightest',
+  $color: props.color ? props.color : 'gray',
   family: 'display',
   spacing: 1,
   ...props,
@@ -178,9 +178,9 @@ export const Headline2 = styled(Text).attrs((props) => ({
 export const Headline3 = styled(Text).attrs((props) => ({
   as: 'h3',
   size: [24, { md: 32, lg: 48 }],
-  weight: '900',
+  weight: '700',
   lineHeight: [1.33, { md: 1.25, lg: 1.17 }],
-  $color: 'lightest',
+  $color: props.color ? props.color : 'gray',
   family: 'display',
   spacing: 1,
   ...props,
@@ -189,9 +189,10 @@ export const Headline3 = styled(Text).attrs((props) => ({
 export const Headline4 = styled(Text).attrs((props) => ({
   as: 'h4',
   size: [20, { lg: 24 }],
-  weight: '900',
+  weight: '600',
   lineHeight: [1.6, { lg: 1.33 }],
-  $color: 'lightest',
+  marginBottom: 1.6,
+  $color: props.color ? props.color : 'gray',
   ...props,
 }))``;
 
@@ -200,7 +201,7 @@ export const Headline5 = styled(Text).attrs((props) => ({
   size: [14, { md: 18, lg: 20 }],
   weight: '900',
   lineHeight: [1.43, { md: 1.33 }],
-  $color: 'lightest',
+  $color: props.color ? props.color : 'gray',
   ...props,
 }))``;
 
@@ -208,7 +209,7 @@ export const BodyParagraph = styled(Text).attrs((props) => ({
   as: 'p',
   size: [16, { lg: 20 }],
   lineHeight: [1.6, { md: 1.5 }],
-  $color: 'lightest',
+  $color: 'black',
   ...props,
 }))``;
 
@@ -216,6 +217,6 @@ export const BodyParagraph2 = styled(Text).attrs((props) => ({
   as: 'p',
   size: [14, { lg: 16 }],
   lineHeight: [1.4, { lg: 1.5 }],
-  $color: 'lightest',
+  $color: 'black',
   ...props,
 }))``;

@@ -18,12 +18,12 @@ export const navigation: Array<NavigationObject> = [
   },
   {
     label: 'Notes',
-    href: '/notes',
+    href: '/note',
     Icon: <GoNote />,
   },
   {
     label: 'To Dos',
-    href: '/todos',
+    href: '/to-do',
     Icon: <RiTodoLine />,
   },
   {
@@ -33,7 +33,7 @@ export const navigation: Array<NavigationObject> = [
   },
   {
     label: 'Mood Logger',
-    href: '/moodlogger',
+    href: '/mood-logger',
     Icon: <BsPen />,
   },
   {

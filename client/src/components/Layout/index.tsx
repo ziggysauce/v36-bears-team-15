@@ -20,7 +20,7 @@ const Layout = ({ children, customMeta }: LayoutProps) => {
   /* isSmall ONLY for screens with 700px or less width Table + Mobile */
   const [isSmall] = useMediaQuerySSR('(max-width: 700px)');
   const [isXLarge] = useMediaQuerySSR('(min-width: 1300px)');
-  console.log(isXLarge);
+
   // TODO: Write to tests to make sure it works as expected and it doesn't need useLayoutEffect
   const [isToggled, toggle] = useToggle(() => (isSmall ? false : true));
 

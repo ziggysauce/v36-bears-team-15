@@ -1,6 +1,12 @@
 /* istanbul ignore file */
 import Main from 'components/Main';
 import supabase from '../lib/supabase';
+import Layout from '../components/Layout';
+
+// TODO: Put this data into yaml or json and grab this during compilation there's no point to ship extra JS
+const metaMain = {
+  title: 'Main - Peak Productivity',
+};
 
 export default function Home({ users, error }) {
   if (!error)
@@ -10,9 +16,9 @@ export default function Home({ users, error }) {
     );
   else console.log(error.message);
   return (
-    <>
+    <Layout customMeta={metaMain}>
       <Main />
-    </>
+    </Layout>
   );
 }
 

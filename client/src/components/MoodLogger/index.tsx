@@ -62,11 +62,7 @@ const MoodLogger = ({ historicDate, historicData }) => {
   } else {
     return (
       <S.Wrapper>
-        {historicDate ? (
-          <StyledLink href="/mood-logger" label="Go to Today's Mood Log" />
-        ) : (
-          <StyledLink href="/" label="Go Back Home" />
-        )}
+        <StyledLink href=(historicDate ? '/mood-logger' : '/') label=(historicDate ? 'Go to Today\'s Mood Log' : 'Go Back Home') />
         <h1>
           {historicDate
             ? `Showing Mood Log for ${formatDate(historicDate)}`

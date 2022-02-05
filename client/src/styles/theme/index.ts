@@ -113,7 +113,12 @@ const hexAlpha = {
 
 const colors = {
   black: '#000000',
-  white: '#FFFFFF',
+  white: '#FEFFFE',
+  primary: '#DCC7F8',
+  secondary: '#B9DDE7',
+  accentLemon: '#EFF769',
+  accentBlue: '#506F74',
+  gray: '#5A5A5A',
   lightest: '#F1F3FF',
   lightest60: `#ffffff${hexAlpha[60]}`,
   darkest: '#000534',

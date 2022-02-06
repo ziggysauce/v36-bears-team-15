@@ -21,7 +21,6 @@ const EntryCard = ({
 
   // Event handlers
   const onSaveNote = () => {
-    console.log('SAVING NOTE: ', noteEntry);
     addNoteToggle(false);
     updateNote(null);
     // TODO: Setup a request to update the database with either a note entry or update
@@ -37,7 +36,7 @@ const EntryCard = ({
         {note}
       </S.TextArea>
       <Flex direction="row" align="center">
-        {noteEntry?.length && (
+        {!!noteEntry?.length && (
           <S.Button onClick={() => onSaveNote()}>Save</S.Button>
         )}
         <S.LinkButton onClick={() => addNoteToggle(false)}>Cancel</S.LinkButton>

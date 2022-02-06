@@ -1,6 +1,7 @@
 import * as S from './styles';
 import StyledLink from '../StyledLink';
 import { useEffect, useState } from 'react';
+import { Flex } from '../index';
 import MoodCard from './components/mood-card';
 import EntryCard from './components/entry-card';
 
@@ -75,7 +76,7 @@ const MoodLogger = ({ historicDate, historicData }) => {
             Add New Entry
           </S.Button>
         )}
-        <S.EntryContainer>
+        <Flex direction="column-reverse" align="center" wrap="wrap">
           {entries.map((entry, idx) => (
             <EntryCard
               key={`${idx}-${entry.mood}`}
@@ -83,7 +84,7 @@ const MoodLogger = ({ historicDate, historicData }) => {
               moodOptions={moodOptions}
             />
           ))}
-        </S.EntryContainer>
+        </Flex>
       </S.Wrapper>
     );
   }

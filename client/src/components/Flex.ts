@@ -18,13 +18,17 @@ type AlignValues =
   | 'baseline'
   | 'flex-start'
   | 'flex-end';
+
 type DirectionValues = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+
+type WrapValues = 'nowrap' | 'wrap' | 'wrap-reverse';
 
 type FlexProps = BaseProps & {
   direction?: ResponsiveRuleValue<DirectionValues>;
   shrink?: boolean;
   align?: ResponsiveRuleValue<AlignValues>;
   justify?: ResponsiveRuleValue<JustifyValues>;
+  wrap?: ResponsiveRuleValue<WrapValues>;
 };
 
 export const Flex = styled.div<FlexProps>`
@@ -34,6 +38,7 @@ export const Flex = styled.div<FlexProps>`
     align && buildResponsiveRules<AlignValues>('align-items', align)}
   ${({ justify }) =>
     justify && buildResponsiveRules<JustifyValues>('justify-content', justify)}
+  ${({ wrap }) => wrap && buildResponsiveRules<WrapValues>('flex-wrap', wrap)}
   ${({ direction = 'row' }) =>
     buildResponsiveRules<DirectionValues>('flex-direction', direction)}
 `;

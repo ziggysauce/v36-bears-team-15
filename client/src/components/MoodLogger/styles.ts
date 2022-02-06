@@ -40,13 +40,20 @@ export const MoodContent = styled.div`
 `;
 
 export const EntryCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #ff0057;
   border-radius: 3px;
   padding: 1em;
   margin: 0.5em 0;
+`;
+
+export const EntryCardMood = styled.div`
   font-size: 2em;
   display: flex;
-  flx-direction: row;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -55,10 +62,19 @@ export const EntryCard = styled.div`
   }
 `;
 
-export const EntryContainer = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
+export const EntryCardNote = styled.div`
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border-radius: 3px;
+  background-color: rgb(220 199 248 / 26%);
+  color: #fff;
+`;
+
+export const TextArea = styled.textarea`
+  margin: 1em 1em 0 1em;
+  padding: 0.5em;
+  width: 100%;
 `;
 
 export const Button = styled.button`
@@ -67,4 +83,13 @@ export const Button = styled.button`
   color: #fff;
   padding: 1em;
   margin: 1em;
+`;
+
+export const LinkButton = styled.button`
+  color: #ff0057;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 0.5em;
+  width: 100%;
 `;

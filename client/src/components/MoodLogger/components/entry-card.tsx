@@ -12,10 +12,7 @@ const getMoodDisplay = (moodOptions, mood) => {
   return display;
 };
 
-const EntryCard = ({
-  entry: { mood, note = 'This is a fake note', timestamp },
-  moodOptions,
-}) => {
+const EntryCard = ({ entry: { mood, note, timestamp }, moodOptions }) => {
   const [addingNote, addNoteToggle] = useState(false);
   const [noteEntry, updateNote] = useState(null);
 
